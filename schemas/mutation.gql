@@ -1,0 +1,8 @@
+
+type Mutation{
+	baseentity(code:InputBaseEntity):BaseEntity
+	startProcess(containerId:String, processId:String):ProcessInstance
+	startProcessWithVars(containerId:String, processId:String, variables:Map):ProcessInstance
+	completeWorkItem(containerId:String, processInstanceId:Long, id:Long,  results:Map):[WorkItemInstance]
+}
+

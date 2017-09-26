@@ -1,0 +1,5 @@
+
+schema {
+    query:QueryType
+    mutation:Mutation 
+}

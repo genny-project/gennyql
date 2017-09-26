@@ -1,0 +1,5 @@
+
+input InputBaseEntity{
+    name: String
+    code: String
+}

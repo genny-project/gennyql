@@ -1,0 +1,105 @@
+scalar Map
+
+type NodeType{
+	id:Long
+	name: String
+	processInstanceId:Long
+	workItemId:Long
+	containerId:String
+	date:String
+	nodeId:String
+	nodeType:String
+	connection:String
+	completed:Boolean
+	referenceId:Long 
+}
+
+type VariableInstance{
+	variableName:String
+	oldValue:String
+	value:String
+	processInstanceId:Long
+	date:String
+}
+
+type ProcessDefinition{
+	id:String
+	name:String
+	version:String
+	packageName:String
+	containerId:String
+	associatedEntities:Map
+	serviceTasks:Map
+	processVariables:Map
+	reusableSubProcesses:[String]
+	dynamic:Boolean
+}
+
+type ProcessInstance{
+	id:Long
+	processId:String
+	processName:String
+	processVersion:String
+	state:Int
+	containerId:String
+	initiator:String
+	date:String
+	processInstanceDescription:String
+	correlationKey:String
+	parentId:Long
+	activeUserTasks:[TaskSummary]
+	variables:Map
+}
+
+type TaskSummary{
+	id:Long
+	name:String
+	subject:String
+	description:String
+	status:String
+	priority:Int
+	skipable:Boolean
+	actualOwner:String
+	createdBy:String
+	createdOn:String
+	activationTime:String
+	expirationTime:String
+	processInstanceId:Long
+	processId:String
+	containerId:String
+	parentId:Long
+}
+
+type ServiceTasksDefinition{
+	serviceTasks:Map
+}
+
+type UserTaskDefinitionList{
+	tasks:[UserTaskDefinition]
+}
+
+type UserTaskDefinition{
+	name:String
+	priority:Int
+	comment:String
+	createdBy:String
+	skippable:Boolean
+	associatedEntities:[String]
+	taskInputMappings:Map
+	taskOutputMappings:Map
+}
+
+type AssociatedEntitiesDefinition{
+	associatedEntities:Map
+}
+
+type WorkItemInstance{
+	id:Long
+	name:String
+	state: Int
+	parameters:Map
+	processInstanceId:Long
+	containerId:String
+	nodeInstanceId:Long
+	nodeId:Long
+}

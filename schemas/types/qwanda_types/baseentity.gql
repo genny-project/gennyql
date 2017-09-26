@@ -1,0 +1,8 @@
+
+type BaseEntity{
+	id:Int
+	created:String
+	updated:String
+	name:String
+	code:String
+}

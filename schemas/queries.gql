@@ -1,0 +1,18 @@
+
+type QueryType {
+    baseEntity:BaseEntity
+    findActiveNodeInstances(containerId:String, processInstanceId:Long, page:Int, pageSize:Int):[NodeType]
+    findCompletedNodeInstances(containerId:String, processInstanceId:Long, page:Int, pageSize:Int):[NodeType]
+    findVariableHistory(containerId:String, processInstanceId:Long, variableName:String, page:Int, pageSize:Int):[VariableInstance]
+    findVariablesCurrentState(containerId:String, processInstanceId:Long):[VariableInstance]
+    getProcessDefinition(containerId:String, processId:String):ProcessDefinition
+    getProcessInstance(containerId:String, processInstanceId:Long):ProcessInstance
+    getServiceTaskDefinitions(containerId:String, processId:String):ServiceTasksDefinition
+    getUserTaskDefinitions(containerId:String, processId:String):UserTaskDefinitionList
+    getAssociatedEntityDefinitions(containerId:String, processId:String):AssociatedEntitiesDefinition
+    getWorkItem(containerId:String, processInstanceId:Long, id:Long):WorkItemInstance
+    getWorkItemByProcessInstance(containerId:String, processInstanceId:Long):[WorkItemInstance]
+    baseEntityByCode(c:String):BaseEntity
+}
+
+
