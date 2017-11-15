@@ -11,7 +11,7 @@ import graphql.schema.DataFetcher;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import graphql.Scalars;
-import life.genny.qwanda.entity.BaseEntity;
+//import life.genny.qwanda.entity.BaseEntity;
 import life.genny.service.ClientServices;
 
 public class QwandaResolver {
@@ -30,11 +30,11 @@ public class QwandaResolver {
 		return fut;
 	};
 
-	public static DataFetcher<BaseEntity> inFooDataFetcher = environment -> {
-		Gson gson = new Gson();
-		BaseEntity base = gson.fromJson(environment.getArgument("code").toString(), BaseEntity.class);
-		return base;
-	};
+//	public static DataFetcher<BaseEntity> inFooDataFetcher = environment -> {
+//		Gson gson = new Gson();
+//		BaseEntity base = gson.fromJson(environment.getArgument("code").toString(), BaseEntity.class);
+//		return base;
+//	};
 	
 	public static DataFetcher activeNodeInstancesFetcher = env-> {
 		Map args = env.getArguments();

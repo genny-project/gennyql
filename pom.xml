@@ -5,16 +5,37 @@
 	<artifactId>vertx-ql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>vertx-ql</name>
+	<properties>
+		<log4j-core-version>2.5</log4j-core-version>
+		<vertx.version>3.4.2</vertx.version>
+
+	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>io.vavr</groupId>
+			<artifactId>vavr</artifactId>
+			<version>0.9.1</version>
+		</dependency>
 		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-java</artifactId>
 			<version>4.1</version>
 		</dependency>
 		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-reactive-streams</artifactId>
+			<version>${vertx.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.vertx/vertx-rx-java -->
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-rx-java</artifactId>
+			<version>${vertx.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>life.genny</groupId>
 			<artifactId>qwanda</artifactId>
-			<version>0.5.2</version>
+			<version>0.5.5</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>jackson-annotations</artifactId>

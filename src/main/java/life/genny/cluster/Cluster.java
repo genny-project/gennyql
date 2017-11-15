@@ -5,19 +5,24 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
+import io.vertx.core.eventbus.EventBus;
+import life.genny.channels.EBCHandlers;
+import life.genny.channels.EBConsumers;
+import life.genny.channels.EBProducers;
 import life.genny.service.ClientServices;
 import life.genny.service.GraphQLRouter;
-import life.genny.service.SomeDatabaseService;
-import life.genny.service.SomeDatabaseServiceImpl;
+import life.genny.service.KieService;
+import life.genny.service.KieServiceImpl;
 
 public class Cluster {
 
 	static Handler<AsyncResult<Vertx>> registerAllChannels = vertx -> {
-//		EventBus eb = vertx.result();
-//		EBConsumers.registerAllConsumer(eb);
-//		EBProducers.registerAllProducers(eb);
-//		EBCHandlers.registerHandlers();
-		ClientServices.setService(vertx.result());
+	    ClientServices.setService(vertx.result());
+		EventBus eb = vertx.result().eventBus();
+		EBConsumers.registerAllConsumer(eb);
+		EBProducers.registerAllProducers(eb);
+		EBCHandlers.registerHandlers();
+		
 //		ClientServices.getService().save(i->{
 //			System.out.println(i.result());
 //		});
