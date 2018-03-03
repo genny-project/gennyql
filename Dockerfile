@@ -9,11 +9,6 @@ ADD docker-entrypoint.sh /docker-entrypoint.sh
 WORKDIR /
 
 EXPOSE 5701
-EXPOSE 5702
-EXPOSE 5703
-EXPOSE 5704
-EXPOSE 5705
-EXPOSE 15704
 EXPOSE 8083
 
 #CMD ["java"]

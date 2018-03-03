@@ -3,6 +3,7 @@ package life.genny.service;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import life.genny.cluster.Cluster;
+import life.genny.cluster.Hazel;
 
 public class Service extends AbstractVerticle {
 

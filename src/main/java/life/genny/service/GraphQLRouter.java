@@ -12,7 +12,7 @@ import life.genny.handlers.RouterHandlers;
 
 public class GraphQLRouter {
 
-	private static int serverPort = 8083;
+	private static int serverPort = 8084;
 	
 	protected static void routers(Vertx vertx) {
 		Router router = Router.router(vertx);

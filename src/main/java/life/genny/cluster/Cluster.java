@@ -17,7 +17,7 @@ import life.genny.service.KieServiceImpl;
 public class Cluster {
 
 	static Handler<AsyncResult<Vertx>> registerAllChannels = vertx -> {
-	    ClientServices.setService(vertx.result());
+//	    ClientServices.setService(vertx.result());
 		EventBus eb = vertx.result().eventBus();
 		EBConsumers.registerAllConsumer(eb);
 		EBProducers.registerAllProducers(eb);
@@ -36,6 +36,7 @@ public class Cluster {
 		Future<Void> fut = Future.future();
 		vertx.factory.clusteredVertx(ClusterConfig.configCluster(),registerAllChannels);
 		fut.complete();
+		System.out.println(fut.isComplete());
 		return fut;
 	}
 

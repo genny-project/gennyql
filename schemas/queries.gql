@@ -13,6 +13,7 @@ type QueryType {
     getWorkItem(containerId:String, processInstanceId:Long, id:Long):WorkItemInstance
     getWorkItemByProcessInstance(containerId:String, processInstanceId:Long):[WorkItemInstance]
     baseEntityByCode(c:String):BaseEntity
+    getbaseEntityByCode(code:String):BaseEntity
 }
 
 

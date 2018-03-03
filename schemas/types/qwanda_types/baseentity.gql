@@ -1,8 +1,54 @@
 
 type BaseEntity{
-	id:Int
-	created:String
-	updated:String
+	id:ID
 	name:String
 	code:String
+	baseEntityAttributes:[EntityAttribute]
+	links:[EntityEntity]
+	created:String
+	updated:String
+	realm:String
+}
+
+type EntityAttribute{
+	baseEntityCode:String
+	attributeCode:String
+	attributeName:String
+	created:String
+	updated:String
+	valueDouble:Float
+	valueBoolean:String
+	valueInteger:Int
+	valueLong:Int
+	valueTime:String
+	valueDateTime:String
+	valueDate:String
+	privacyFlag:Boolean
+	inferred:Boolean
+}
+
+type EntityEntity{
+	link:Link
+	created:String
+	updated:String
+	valueDouble:Float
+	valueBoolean:Boolean
+	valueInteger:Int
+	valueLong:Int
+	valueDateTime:String
+	valueDate:String
+	valueTime:String
+	valueString:String
+	weight:Float
+}
+
+type Link{
+	attributeCode:String
+	targetCode:String
+	sourceCode:String
+	linkValue:String
+	weight:Float
+	childColor:String
+	parentColor:String
+	rule:String
 }
