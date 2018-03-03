@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>life.genny</groupId>
-	<artifactId>vertx-ql</artifactId>
+	<artifactId>qwanda-ql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>vertx-ql</name>
+	<name>qwanda-ql</name>
 	<properties>
 		<log4j-core-version>2.5</log4j-core-version>
 		<vertx.version>3.4.2</vertx.version>
