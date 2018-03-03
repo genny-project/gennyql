@@ -61,11 +61,11 @@
 					<artifactId>hsqldb</artifactId> <groupId>org.hsqldb</groupId> </exclusion> -->
 			</exclusions>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>life.genny</groupId>
 			<artifactId>minerva</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-web</artifactId>

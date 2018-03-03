@@ -11,8 +11,8 @@ import life.genny.channels.EBConsumers;
 import life.genny.channels.EBProducers;
 import life.genny.service.ClientServices;
 import life.genny.service.GraphQLRouter;
-import life.genny.service.KieService;
-import life.genny.service.KieServiceImpl;
+//import life.genny.service.KieService;
+//import life.genny.service.KieServiceImpl;
 
 public class Cluster {
 

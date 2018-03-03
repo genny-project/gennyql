@@ -33,9 +33,9 @@ public class QwandaResolver {
 
   public static DataFetcher baseEntityDataFetcher = environment -> {
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().save(i -> {
-      fut.complete(i.result().getMap());
-    });
+//    ClientServices.getService().save(i -> {
+//      fut.complete(i.result().getMap());
+//    });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -54,11 +54,11 @@ public class QwandaResolver {
   public static DataFetcher activeNodeInstancesFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().findActiveNodeInstances((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), (int) args.get("page"), (int) args.get("pageSize"),
-        res -> {
-          fut.complete(res.result().getList());
-        });
+//    ClientServices.getService().findActiveNodeInstances((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), (int) args.get("page"), (int) args.get("pageSize"),
+//        res -> {
+//          fut.complete(res.result().getList());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -71,11 +71,11 @@ public class QwandaResolver {
   public static DataFetcher completedNodeInstancesFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().findCompletedNodeInstances((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), (int) args.get("page"), (int) args.get("pageSize"),
-        res -> {
-          fut.complete(res.result().getList());
-        });
+//    ClientServices.getService().findCompletedNodeInstances((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), (int) args.get("page"), (int) args.get("pageSize"),
+//        res -> {
+//          fut.complete(res.result().getList());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -88,11 +88,11 @@ public class QwandaResolver {
   public static DataFetcher findNodeInstancesFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().findNodeInstances((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), (int) args.get("page"), (int) args.get("pageSize"),
-        res -> {
-          fut.complete(res.result().getList());
-        });
+//    ClientServices.getService().findNodeInstances((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), (int) args.get("page"), (int) args.get("pageSize"),
+//        res -> {
+//          fut.complete(res.result().getList());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -105,11 +105,11 @@ public class QwandaResolver {
   public static DataFetcher findVariableHistoryFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().findVariableHistory((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), (String) args.get("variableName"),
-        (int) args.get("page"), (int) args.get("pageSize"), res -> {
-          fut.complete(res.result().getList());
-        });
+//    ClientServices.getService().findVariableHistory((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), (String) args.get("variableName"),
+//        (int) args.get("page"), (int) args.get("pageSize"), res -> {
+//          fut.complete(res.result().getList());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -122,10 +122,10 @@ public class QwandaResolver {
   public static DataFetcher findVariablesCurrentStateFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().findVariablesCurrentState((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), res -> {
-          fut.complete(res.result().getList());
-        });
+//    ClientServices.getService().findVariablesCurrentState((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), res -> {
+//          fut.complete(res.result().getList());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -138,10 +138,10 @@ public class QwandaResolver {
   public static DataFetcher getProcessDefinitionFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().getProcessDefinition((String) args.get("containerId"),
-        (String) args.get("processId"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().getProcessDefinition((String) args.get("containerId"),
+//        (String) args.get("processId"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -154,10 +154,10 @@ public class QwandaResolver {
   public static DataFetcher getProcessInstanceFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().getProcessInstance((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().getProcessInstance((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -170,10 +170,10 @@ public class QwandaResolver {
   public static DataFetcher getServiceTaskDefinitionsFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().getServiceTaskDefinitions((String) args.get("containerId"),
-        (String) args.get("processId"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().getServiceTaskDefinitions((String) args.get("containerId"),
+//        (String) args.get("processId"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -186,10 +186,10 @@ public class QwandaResolver {
   public static DataFetcher getUserTaskDefinitionsFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().getUserTaskDefinitions((String) args.get("containerId"),
-        (String) args.get("processId"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().getUserTaskDefinitions((String) args.get("containerId"),
+//        (String) args.get("processId"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -202,10 +202,10 @@ public class QwandaResolver {
   public static DataFetcher getAssociatedEntityDefinitionsFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().getAssociatedEntityDefinitions((String) args.get("containerId"),
-        (String) args.get("processId"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().getAssociatedEntityDefinitions((String) args.get("containerId"),
+//        (String) args.get("processId"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -218,10 +218,10 @@ public class QwandaResolver {
   public static DataFetcher getWorkItemFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().getWorkItem((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), (Long) args.get("id"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().getWorkItem((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), (Long) args.get("id"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -234,10 +234,10 @@ public class QwandaResolver {
   public static DataFetcher startProcessFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().startProcess((String) args.get("containerId"),
-        (String) args.get("processId"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().startProcess((String) args.get("containerId"),
+//        (String) args.get("processId"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -250,10 +250,10 @@ public class QwandaResolver {
   public static DataFetcher startProcessWithVarsFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().startProcessWithVars((String) args.get("containerId"),
-        (String) args.get("processId"), (JsonObject) args.get("variables"), res -> {
-          fut.complete(res.result().getMap());
-        });
+//    ClientServices.getService().startProcessWithVars((String) args.get("containerId"),
+//        (String) args.get("processId"), (JsonObject) args.get("variables"), res -> {
+//          fut.complete(res.result().getMap());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -268,10 +268,10 @@ public class QwandaResolver {
     Map map = (Map) args.get("results");
     JsonObject ob = new JsonObject().mapFrom(args.get("results"));
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().completeWorkItem((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), (Long) args.get("id"), ob, res -> {
-          fut.complete(res.result().getList());
-        });
+//    ClientServices.getService().completeWorkItem((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), (Long) args.get("id"), ob, res -> {
+//          fut.complete(res.result().getList());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {
@@ -284,10 +284,10 @@ public class QwandaResolver {
   public static DataFetcher getWorkItemByProcessInstanceFetcher = env -> {
     Map args = env.getArguments();
     CompletableFuture fut = new CompletableFuture<>();
-    ClientServices.getService().getWorkItemByProcessInstance((String) args.get("containerId"),
-        (Long) args.get("processInstanceId"), res -> {
-          fut.complete(res.result().getList());
-        });
+//    ClientServices.getService().getWorkItemByProcessInstance((String) args.get("containerId"),
+//        (Long) args.get("processInstanceId"), res -> {
+//          fut.complete(res.result().getList());
+//        });
     try {
       fut.get();
     } catch (InterruptedException | ExecutionException e) {

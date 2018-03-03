@@ -8,15 +8,15 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
-import org.kie.api.KieBase;
-import org.kie.api.KieBaseConfiguration;
-import org.kie.api.KieServices;
-import org.kie.api.builder.KieBuilder;
-import org.kie.api.builder.KieFileSystem;
-import org.kie.api.builder.Message;
-import org.kie.api.io.ResourceType;
-import org.kie.api.runtime.KieContainer;
-import org.kie.api.runtime.KieSession;
+//import org.kie.api.KieBase;
+//import org.kie.api.KieBaseConfiguration;
+//import org.kie.api.KieServices;
+//import org.kie.api.builder.KieBuilder;
+//import org.kie.api.builder.KieFileSystem;
+//import org.kie.api.builder.Message;
+//import org.kie.api.io.ResourceType;
+//import org.kie.api.runtime.KieContainer;
+//import org.kie.api.runtime.KieSession;
 import java.io.StringReader;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
@@ -41,16 +41,16 @@ import life.genny.qwanda.message.QEventMessage;
 import life.genny.qwanda.rule.Rule;
 import life.genny.qwandautils.KeycloakUtils;
 import life.genny.service.ClientServices;
-import life.genny.service.KieClient;
+//import life.genny.service.KieClient;
 
 public class EBCHandlers {
 
   private static final Logger logger = LoggerFactory.getLogger(EBCHandlers.class);
 
-  static Map<String, KieBase> kieBaseCache = null;
-  static {
-    kieBaseCache = new HashMap<String, KieBase>();
-  }
+//  static Map<String, KieBase> kieBaseCache = null;
+//  static {
+//    kieBaseCache = new HashMap<String, KieBase>();
+//  }
 
   static Gson gson = new GsonBuilder()
       .registerTypeAdapter(LocalDateTime.class, new JsonDeserializer<LocalDateTime>() {
@@ -66,12 +66,12 @@ public class EBCHandlers {
         }
       }).create();
 
-  static KieServices ks = KieServices.Factory.get();
-  static KieContainer kContainer;
+//  static KieServices ks = KieServices.Factory.get();
+//  static KieContainer kContainer;
   final static String qwandaApiUrl = System.getenv("REACT_APP_QWANDA_API_URL");
   final static String vertxUrl = System.getenv("REACT_APP_VERTX_URL");
   final static String hostIp = System.getenv("HOSTIP");
-  static KieSession kSession;
+//  static KieSession kSession;
   static String token;
 
 
@@ -82,7 +82,7 @@ public class EBCHandlers {
       final JsonObject payload = new JsonObject(arg.body().toString());
       final String token = payload.getString("token");
       System.out.println(payload);
-      ClientServices.getService().fireRule(payload);
+//      ClientServices.getService().fireRule(payload);
       System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n\n\n***********************************");
     });
 
