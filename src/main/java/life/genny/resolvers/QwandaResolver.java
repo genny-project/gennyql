@@ -45,11 +45,6 @@ public class QwandaResolver {
     return fut;
   };
 
-  // public static DataFetcher<BaseEntity> inFooDataFetcher = environment -> {
-  static Gson gson = new Gson();
-  // BaseEntity base = gson.fromJson(environment.getArgument("code").toString(), BaseEntity.class);
-  // return base;
-  // };
 
   public static DataFetcher activeNodeInstancesFetcher = env -> {
     Map args = env.getArguments();

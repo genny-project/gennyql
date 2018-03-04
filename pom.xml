@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>life.genny</groupId>
 	<artifactId>qwanda-ql</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.11</version>
 	<name>qwanda-ql</name>
 	<properties>
 		<log4j-core-version>2.5</log4j-core-version>
 		<vertx.version>3.4.2</vertx.version>
-
+		<qwanda.version>1.0.11</qwanda.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>life.genny</groupId>
 			<artifactId>qwanda-utils</artifactId>
-			<version>1.0.9</version>
+			<version>${qwanda.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>jackson-annotations</artifactId>

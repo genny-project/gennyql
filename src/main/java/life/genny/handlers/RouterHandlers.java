@@ -33,7 +33,7 @@ public class RouterHandlers {
         executionInput = ExecutionInput.newExecutionInput().query(query).build();
         System.out.println("catch_____________"+ executionInput);
       }
-      Vertx.vertx().executeBlocking(blocking -> {
+      Vertx.currentContext().owner().executeBlocking(blocking -> {
         System.out.println("blocking_____________");
         ExecutionResult executionResult = GraphQLService.getGraphQL().execute(executionInput);
         System.out.println(data + "+++++++++++++\n\n");
