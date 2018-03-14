@@ -3,9 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>life.genny</groupId>
 	<artifactId>vertx-ql</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>vertx-ql</name>
+	<version>1.0.12</version>
+	<name>qwanda-ql</name>
 	<properties>
+		<qwanda.version>1.0.12</qwanda.version>
 		<log4j-core-version>2.5</log4j-core-version>
 		<vertx.version>3.4.2</vertx.version>
 
@@ -35,7 +36,7 @@
 		<dependency>
 			<groupId>life.genny</groupId>
 			<artifactId>qwanda-utils</artifactId>
-			<version>1.0.9</version>
+			<version>${qwanda.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>jackson-annotations</artifactId>
@@ -64,7 +65,7 @@
 		<dependency>
 			<groupId>life.genny</groupId>
 			<artifactId>minerva</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${qwanda.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.vertx</groupId>
