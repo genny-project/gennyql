@@ -1,32 +1,38 @@
 package life.genny.cluster;
 
-import java.lang.reflect.InvocationTargetException;
 import com.hazelcast.config.Config;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.eventbus.EventBusOptions;
 import io.vertx.core.spi.cluster.ClusterManager;
 import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager;
-import life.genny.qwanda.validation.Validation;
 
 /**
  * @author Adam Crow
  * @author Byron Aguirre
  */
 public class ClusterConfig {
-
+  private static final Logger logger = LoggerFactory.getLogger(ClusterConfig.class);
 
   private static String hostIP =
       System.getenv("HOSTIP") != null ? System.getenv("HOSTIP") : "127.0.0.1";
+  private static String systemUser =
+      System.getenv("USER") != null ? System.getenv("USER") : "genny";
+      
 
   private static String privateIP = System.getenv("MYIP");
-  private final static int portHazelcastCluster = 5704;
-  private final static int portEBCluster = 15704;
+  private final static int portHazelcastCluster = 5701;
+  private final static int portEBCluster = 15701;
 
   /**
    * @param toClientOutbount the toClientOutbount to set
    */
   public static Config configHazelcastCluster() {
-    Config hazelcastConfig = new Config();
+    final Config hazelcastConfig = new Config();
+    hazelcastConfig.getGroupConfig().setName( systemUser).setPassword(systemUser);
+
+
     hazelcastConfig.getNetworkConfig().setPort(portHazelcastCluster);
     hazelcastConfig.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
     hazelcastConfig.getNetworkConfig().getJoin().getTcpIpConfig().setEnabled(true);
@@ -39,7 +45,7 @@ public class ClusterConfig {
    * @param toClientOutbount the toClientOutbount to set
    */
   public static EventBusOptions configEBCluster() {
-    EventBusOptions eb = new EventBusOptions();
+    final EventBusOptions eb = new EventBusOptions();
     if (privateIP != null)
       eb.setPort(portEBCluster).setHost(privateIP);
     return eb;
@@ -49,11 +55,26 @@ public class ClusterConfig {
    * @param toClientOutbount the toClientOutbount to set
    */
   public static VertxOptions configCluster() {
-    // ClusterManager mgr = new HazelcastClusterManager(configHazelcastCluster());
-    ClusterManager mgr = new HazelcastClusterManager();
-    VertxOptions options = new VertxOptions();
-    options.setClusterManager(mgr);
-    options.setEventBusOptions(configEBCluster());
+    final VertxOptions options = new VertxOptions();
+
+    if (System.getenv("DEV_MODE") == null) {
+      final ClusterManager mgr = new HazelcastClusterManager();
+//      final ClusterManager mgr = new HazelcastClusterManager();
+      options.setClusterManager(mgr);
+      options.setEventBusOptions(configEBCluster());
+      options.setClustered(true);
+    } else {
+      logger.info("Running DEV mode, cluster");
+      ClusterManager mgr = null;
+      final Config hazelcastConfig = new Config();
+      hazelcastConfig.getGroupConfig().setName( hostIP ).setPassword( systemUser );
+      mgr = new HazelcastClusterManager(hazelcastConfig); // standard docker
+      System.out.println("Starting Clustered Vertx");
+      options.setClusterManager(mgr);
+      options.setBlockedThreadCheckInterval(200000000);
+      options.setMaxEventLoopExecuteTime(Long.MAX_VALUE);
+      options.setClustered(true);
+    }
     return options;
   }
 }

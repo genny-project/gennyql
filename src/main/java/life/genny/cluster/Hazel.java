@@ -6,7 +6,7 @@ import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.client.config.ClientNetworkConfig;
 import com.hazelcast.core.HazelcastInstance;
-import life.genny.service.KieClient;
+//import life.genny.service.KieClient;
 
 public class Hazel {
   private HazelcastInstance clientInstance;

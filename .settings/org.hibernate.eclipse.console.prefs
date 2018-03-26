@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 default.configuration=vertx-ql
+=======
+default.configuration=qwanda-ql
+>>>>>>> 4199143ebc4a56d957a720a9486cc436b119f730
 eclipse.preferences.version=1
 hibernate3.enabled=true

@@ -1,6 +1,5 @@
 package life.genny.cluster;
 
-import graphql.schema.idl.TypeDefinitionRegistry;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
@@ -9,10 +8,6 @@ import io.vertx.core.eventbus.EventBus;
 import life.genny.channels.EBCHandlers;
 import life.genny.channels.EBConsumers;
 import life.genny.channels.EBProducers;
-import life.genny.service.ClientServices;
-import life.genny.service.GraphQLRouter;
-import life.genny.service.KieService;
-import life.genny.service.KieServiceImpl;
 
 public class Cluster {
 
