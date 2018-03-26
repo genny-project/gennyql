@@ -62,16 +62,11 @@
 					<artifactId>hsqldb</artifactId> <groupId>org.hsqldb</groupId> </exclusion> -->
 			</exclusions>
 		</dependency>
-<!-- 		<dependency>
+ 		<dependency>
 			<groupId>life.genny</groupId>
 			<artifactId>minerva</artifactId>
-<<<<<<< HEAD
 			<version>${qwanda.version}</version>
 		</dependency>
-=======
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency> -->
->>>>>>> 4199143ebc4a56d957a720a9486cc436b119f730
 		<dependency>
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-web</artifactId>
