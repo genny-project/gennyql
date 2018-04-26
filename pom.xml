@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>life.genny</groupId>
 	<artifactId>qwanda-ql</artifactId>
-	<version>1.0.18</version>
+	<version>1.0.23</version>
 	<name>qwanda-ql</name>
 	<properties>
-		<qwanda.version>1.0.18</qwanda.version>
+		<qwanda.version>1.0.23</qwanda.version>
 		<log4j-core-version>2.5</log4j-core-version>
 		<vertx.version>3.4.2</vertx.version>
 	</properties>

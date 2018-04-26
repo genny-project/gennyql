@@ -30,9 +30,6 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
-<<<<<<< HEAD
-=======
 		<nature>org.zeroturnaround.eclipse.jrebelNature</nature>
->>>>>>> 4199143ebc4a56d957a720a9486cc436b119f730
 	</natures>
 </projectDescription>
